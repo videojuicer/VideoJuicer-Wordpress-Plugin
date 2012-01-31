@@ -1,0 +1,1 @@
+<link rel="stylesheet" type="text/css" href="<?php echo WP_PLUGIN_URL ?>/videojuicer/resources/styles.css" media="all" />

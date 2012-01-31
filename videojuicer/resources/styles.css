@@ -1,0 +1,60 @@
+.mceIcon.mce_videojuicer {
+	background: transparent url('button.png') no-repeat 0px 0px !important;
+}
+
+.mceIcon.mce_videojuicer:hover {
+	background-position: 0 -20px !important;
+}
+
+.vj_logo a {
+		width: 378px;
+		height: 41px;
+		overflow: hidden;
+		line-height:44000;
+		display: block;
+
+		background: transparent url('vj_logo.png') no-repeat 0px 0px;
+	}
+
+.vj_popup form {
+	width: 243px;
+}
+
+.vj_popup input {
+	width: 240px;	
+}
+
+.vj_popup label {
+	display: block;
+}
+
+.vj_dimensions .dim {
+	width: 100px;
+	float: left;
+}
+
+.vj_dimensions .dim input {
+	width: 100px;
+}
+
+.vj_dimensions .dim_op {
+	float: left;
+	text-align: center;
+	padding-top: 15px;
+	font-weight:bold;
+	width: 40px;
+	text-transform: uppercase;
+}
+
+.vj_clear {
+	clear: both;
+}
+
+.vj_popup .mceActionPanel {
+    line-height: 30px;
+    margin-top: 15px;
+}
+
+.vj_popup .mceActionPanel a {
+	float: right;
+}
