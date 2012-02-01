@@ -1,16 +1,16 @@
-=== VideoJuicer For Wordpress ===
+=== Videojuicer For Wordpress ===
 Contributors: vj_martin
 Tags: video , media , videojuicer , video jucier , helper
 Requires at least: 3.0.0
 Tested up to: 3.3.1
 Stable tag: trunk
 
-A helper plugin to embed Video content hosted by VideoJuicer 
+A helper plugin to embed Video content hosted by Videojuicer 
 
 == Description ==
 
 
-Allowing you to quickly embed video content from [VideoJuicer]: http://www.videojuicer.com into any 
+Allowing you to quickly embed video content from [Videojuicer]: http://www.videojuicer.com into any 
 wordpress page or post. 
 
 You can configure the plug-in to show the video's meta data in the post ( where available ) , as 
@@ -43,18 +43,18 @@ For those of you who like to keep things short you can also use the alias [vj]
 Options
 -------
 
-	Presentation* : The id of the presentation if you do not know this please contact VideoJuicer
+	Presentation* : The id of the presentation if you do not know this please contact Videojuicer
 	width		  : The width to embed the video at in pixels ( note you do not need the px 
 				    i.e use 800 not 800px)
 	height        : The height at which to embed the video again in pixals
-	seed		  : Your VideoJuicer seed ID please contact VideoJuicer if you are unsure as to what this is
+	seed		  : Your Videojuicer seed ID please contact Videojuicer if you are unsure as to what this is
 
 *Required
 
 Settings
 --------
 
-Default configuration settings can be set up by visiting Settings => VideoJuicer in the Wordpress admin area.
+Default configuration settings can be set up by visiting Settings => Videojuicer in the Wordpress admin area.
 Normally located at http://www.{your domain}/wp-admin. These settings are used when you don't specify anything different. This allows you to insert video without setting up the seed id or dimensions. It also allows you to setup whether or not you want the meta data about the video displayed in the post, such as 
 Title
 
@@ -66,21 +66,21 @@ Title
 	Default Embed Dimensions: The default Width and Height to use when embeding video content. This is 
 	Pixels , please note you don't need to including the 'px' as above.
 
-$ Depending on the data been supplied by the VideoJuicer Oembed endpoint. 
+$ Depending on the data been supplied by the Videojuicer Oembed endpoint. 
 
 == Installation ==
 
-Installation instruction may change depending on VideoJuicer submitting the plugin to the wordpress plugin directory.
+Installation instruction may change depending on Videojuicer submitting the plugin to the wordpress plugin directory.
 
-1. Download the plugin from VideoJuicer's GitHub at 
+1. Download the plugin from Videojuicer's GitHub at 
 2. copy / upload the videojuicer directory to /wp-content/plugins/ so you end up with /wp-content/plugins/videojuicer
 3. Activate the plugin in the Wordpress admin area , normally located at /wp-admin
-4. Setup the defaults in Setting => VideoJuicer
+4. Setup the defaults in Setting => Videojuicer
 
 == Screenshots ==
 
-1. The Editor Showing the VideoJuicer button
-2. The Editor Showing the VideoJuicer easy insert dialogue
+1. The Editor Showing the Videojuicer button
+2. The Editor Showing the Videojuicer easy insert dialogue
 3. The Editor Showing the Shortcodes
 4. The Options Screen.
 
@@ -93,8 +93,8 @@ Installation instruction may change depending on VideoJuicer submitting the plug
 
 GNU General Public License, version 2 (GPL-2.0)
 
-VideoJuicer For Wordpress
-Copyright (C) <2012> <VideoJuicer>
+Videojuicer For Wordpress
+Copyright (C) <2012> <Videojuicer>
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 

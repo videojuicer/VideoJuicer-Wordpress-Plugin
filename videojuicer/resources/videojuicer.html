@@ -1,21 +1,24 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<title>VideoJuicer</title>
+		<title>Videojuicer</title>
 		<script type="text/javascript" src="/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
 		<script type="text/javascript" src="popup.js"></script>
 		<link rel="stylesheet" href="styles.css" type="text/css" media="all" /> 
 	</head>
 
 	<body class="vj_popup">
-	<form action="#" name="data" onsubmit="return videojuicer_popup.submit();">
+	<form action="#" name="data" id="data" onsubmit="return videojuicer_popup.submit();">
 		<div class="basic">
 			<label for="Presentation">Presentation</label>
 			<input type="text" name="presentation" id="presentation" />
+
 		</div>
 
 		<div class="adv">
 			<p>The following settings are <strong>optional</strong>.</p>
+			<label for="Presentation">Seed</label>
+			<input type="text" name="seed_id" id="seed_id" />
 			<div class="vj_dimensions">
 				<div class="dim">
 					<label for="Presentation">Width (px)</label>
@@ -29,16 +32,13 @@
 					<input type="text" name="height" id="height" />
 				</div>
 			</div>
-
-			<label for="Presentation" class="vj_clear">Seed</label>
-			<input type="text" name="seed" id="seed" />
-
+			<div class="vj_clear">&nbsp;</div>
 		</div>
 		<div class="mceActionPanel">
 			<input type="submit" name="insert" value="Insert" id="insert" />
 			<input type="button" name="cancel" value="Cancel" onclick="tinyMCEPopup.close();" id="cancel" />
-			<a href="http://www.videojuicer.com/" title="Go to the VideoJuicer Website">
-				<img src="vj_icon.png" alt="VideoJuicer" />
+			<a href="http://www.videojuicer.com/" title="Go to the Videojuicer Website" taget="blank">
+				<img src="vj_icon.png" alt="Videojuicer" />
 			</a>
 		</div>
 	</form>

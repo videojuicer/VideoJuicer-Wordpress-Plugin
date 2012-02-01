@@ -1,7 +1,7 @@
 <?php 
 /*
-VideoJuicer For Wordpress
-Copyright (C) <2012> <VideoJuicer>
+Videojuicer For Wordpress
+Copyright (C) <2012> <Videojuicer>
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
@@ -24,7 +24,7 @@ class videojuicer_frontend
 
 	public function __construct()
 	{
-		$this->settings = new videojuicer_settings(VideoJuicer::OPTION, array());
+		$this->settings = new videojuicer_settings(Videojuicer::OPTION, array());
 	}
 
 	public function shortcode( $attr ) 
@@ -47,8 +47,8 @@ class videojuicer_frontend
 			$count++;
 		}
 
-		$endpoint = $this->build_string( VideoJuicer::OEMBED_ENDPOINT , array('seed' => $final['seed'] ));
-		$url = $this->build_string(  VideoJuicer::URL_SCHEMA , array('seed' => $final['seed'] , 'presentation' => $final['presentation'] ));
+		$endpoint = $this->build_string( Videojuicer::OEMBED_ENDPOINT , array('seed' => $final['seed'] ));
+		$url = $this->build_string(  Videojuicer::URL_SCHEMA , array('seed' => $final['seed'] , 'presentation' => $final['presentation'] ));
 
 		$request = array( 'endpoint' => $endpoint,
 						  'url' => $url,	

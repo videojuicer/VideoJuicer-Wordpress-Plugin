@@ -1,15 +1,15 @@
 <?php
 /*
-Plugin Name: VideoJuicer for Wordpress
+Plugin Name: Videojuicer for Wordpress
 Plugin URI: http://www.videojuicer.com
-Description: This adds some VideoJuicer Functionality to Wordpress
+Description: This adds some Videojuicer Functionality to Wordpress
 Version: 0.2
 Author: VideoJucier
 Author URI: http://www.videojuicer.com
 License: GNU General Public License, version 2 (GPL-2.0)
 
-VideoJuicer For Wordpress
-Copyright (C) <2012> <VideoJuicer>
+Videojuicer For Wordpress
+Copyright (C) <2012> <Videojuicer>
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
@@ -35,19 +35,19 @@ Load Required Fields
 This gets called when the plugin gets activated , according to the wordpress docs , it should be outside any class , and can not be registered by the init action. 
 
 **/
-register_activation_hook( WP_PLUGIN_DIR.'/videojuicer/videojuicer.php' , array('VideoJuicer' , 'on_activation'));
+register_activation_hook( WP_PLUGIN_DIR.'/videojuicer/videojuicer.php' , array('Videojuicer' , 'on_activation'));
 
 /**
 	Base Class , acts as a Namespace wrapper, to stop name conflicts with other plugins the user may have installed. All methods in this class should be static , this is to allow interface with wordpress. 
 
 	@version 1.0
-	@author VideoJuicer 
+	@author Videojuicer 
 **/
 
-class VideoJuicer {
+class Videojuicer {
 	/**
 
-	The VideoJuicer oembed end point , should never change 
+	The Videojuicer oembed end point , should never change 
 
 	**/
 
@@ -55,7 +55,7 @@ class VideoJuicer {
 
 	/**
 
-	The VideoJuicer URL Schema for embeding
+	The Videojuicer URL Schema for embeding
 	The protocol is intentionally left of so the embed uses ssl if needed.
 
 	**/
@@ -189,4 +189,4 @@ class VideoJuicer {
 This boots the Plugin
 
 **/
-add_action('init' , array('VideoJuicer' , 'init') );
+add_action('init' , array('Videojuicer' , 'init') );

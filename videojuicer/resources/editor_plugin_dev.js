@@ -17,13 +17,13 @@
 				});
 			});
 
-			ed.addButton('videojuicer', {title : 'VideoJuicer' , cmd : 'mceVideojuicer'});
+			ed.addButton('videojuicer', {title : 'Videojuicer' , cmd : 'mceVideojuicer'});
 		},
 
 		getInfo : function() {
 			return {
-				longname  : 'VideoJuicer',
-				author	  : 'VideoJuicer',
+				longname  : 'Videojuicer',
+				author	  : 'Videojuicer',
 				authorurl : 'http://www.videojuicer.com/',
 				infourl : 'http://www.videojuicer.com/',
 				version : '0.1.0'

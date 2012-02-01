@@ -1,7 +1,7 @@
 <?php
 /*
-VideoJuicer For Wordpress
-Copyright (C) <2012> <VideoJuicer>
+Videojuicer For Wordpress
+Copyright (C) <2012> <Videojuicer>
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
@@ -40,6 +40,7 @@ if ( !class_exists('videojuicer_settings') ) {
 
 		public function __construct( $option , array $allowed , $auto_save = TRUE )
 		{
+
 			$this->option = $option;
 			$this->auto_save = $auto_save;
 			$this->allowed = $allowed;
@@ -117,6 +118,11 @@ if ( !class_exists('videojuicer_settings') ) {
 			}
 		}
 
+		public function to_json() 
+		{
+			return json_encode($this->data);	
+		}
+
 		/**
 
 		Write the plugin settings to the database 
@@ -125,7 +131,8 @@ if ( !class_exists('videojuicer_settings') ) {
 		@return null
 
 		**/
-		public function save() {
+		public function save() 
+		{
 			update_option( $this->option , $this->data );
 		}
 	}

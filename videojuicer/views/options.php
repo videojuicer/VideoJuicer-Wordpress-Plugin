@@ -1,7 +1,7 @@
 <?php
 /*
-VideoJuicer For Wordpress
-Copyright (C) <2012> <VideoJuicer>
+Videojuicer For Wordpress
+Copyright (C) <2012> <Videojuicer>
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
@@ -14,7 +14,7 @@ Full Terms can be found on the world wide web at http://opensource.org/licenses/
 ?>
 <div class="wrap">
 	<h2 class="vj_logo">
-	<a href="http://www.videojuicer.com">VideoJuicer</a></h2>
+	<a href="http://www.videojuicer.com">Videojuicer</a></h2>
 	<?php if ( isset($message) ) : ?>
 	<div id="message" class="updated below-h2">
 		<p><?php echo $message; ?></p>
@@ -111,6 +111,6 @@ Full Terms can be found on the world wide web at http://opensource.org/licenses/
 </div>
 
 <div class="vj_footer">
-<p>VideoJuicer and The VideoJuicer Logo are Copyright (&copy;) <a href="http://www.videojuicer.com">VideoJuicer</a> <?php echo date('Y'); ?>.  All Rights Reserved.</p>
-<p>VideoJuicer for Wordpress Plugin , Version <?php echo VideoJuicer::VERSION; ?> </p>
+<p>Videojuicer and The Videojuicer Logo are Copyright (&copy;) <a href="http://www.videojuicer.com">Videojuicer</a> <?php echo date('Y'); ?>.  All Rights Reserved.</p>
+<p>Videojuicer for Wordpress Plugin , Version <?php echo Videojuicer::VERSION; ?> </p>
 </div>

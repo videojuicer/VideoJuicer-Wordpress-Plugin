@@ -1,7 +1,7 @@
 <?php
 /*
-VideoJuicer For Wordpress
-Copyright (C) <2012> <VideoJuicer>
+Videojuicer For Wordpress
+Copyright (C) <2012> <Videojuicer>
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
@@ -29,8 +29,8 @@ class videojuicer_admin
 	**/
 	public function __construct() 
 	{
-		$this->view_path = dirname(__FILE__).'/../'.VideoJuicer::VIEWS;
-		$this->settings = new videojuicer_settings( VideoJuicer::OPTION , array('seed_id' , 'show_title' , 'show_author' , 'show_description' , 'width' , 'height'));
+		$this->view_path = dirname(__FILE__).'/../'.Videojuicer::VIEWS;
+		$this->settings = new videojuicer_settings( Videojuicer::OPTION , array('seed_id' , 'show_title' , 'show_author' , 'show_description' , 'width' , 'height'));
 	}
 	/**
 
@@ -50,7 +50,7 @@ class videojuicer_admin
 	**/
 	public function init() 
 	{
-	
+
 	}
 
 	/**
@@ -60,20 +60,21 @@ class videojuicer_admin
 	**/
 	public function menu() 
 	{
-		add_options_page(__('VideoJuicer'),
-				 		 __('VideoJuicer'),
-				 		 VideoJuicer::ROLE,
+		add_options_page(__('Videojuicer'),
+				 		 __('Videojuicer'),
+				 		 Videojuicer::ROLE,
 				 		 'videojuicer',
 				 		 array($this , 'options_page'));
 	}
 
 	/**
 
-		This allows the user to alter the options for their VideoJuicer account 
+		This allows the user to alter the options for their Videojuicer account 
 
 	**/
 	public function options_page() 
 	{
+
 		if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			$this->save_post();
 			$message = 'Settings updated';
@@ -93,17 +94,17 @@ class videojuicer_admin
 
 	/**
 
-	This adds the VideoJuicer button to the TinyMCE editor
+	This adds the Videojuicer button to the TinyMCE editor
 
 	**/
 
 	public function tinymce ( $plugins ) 
 	{
-		$plugin_path = dirname(__FILE__).'/../'.VideoJuicer::TINY_MCE;
+		$plugin_path = dirname(__FILE__).'/../'.Videojuicer::TINY_MCE;
 
 	//	if ( ! file_exists($plugin_path)) return $plugins;
 
-		$url_to_plugin = WP_PLUGIN_URL.'/videojuicer/'.VideoJuicer::TINY_MCE;
+		$url_to_plugin = WP_PLUGIN_URL.'/videojuicer/'.Videojuicer::TINY_MCE;
 
 		$plugins['videojuicer'] = $url_to_plugin;
 

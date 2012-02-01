@@ -9,10 +9,10 @@
 	Currently only supports API's that speack JSON 
 
 	@version 0.1.0
-	@author VideoJuicer (http://VideoJuicer.com)
+	@author Videojuicer (http://Videojuicer.com)
 /*
-VideoJuicer For Wordpress
-Copyright (C) <2012> <VideoJuicer>
+Videojuicer For Wordpress
+Copyright (C) <2012> <Videojuicer>
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
