@@ -96,7 +96,7 @@ class Videojuicer {
 
 	**/
 
-	const ROLE = 'author';
+	const ROLE = 'administrator';
 
 	/**
 
@@ -150,6 +150,7 @@ class Videojuicer {
 		add_action('mce_external_plugins' , array(__CLASS__ , 'tinymce'));
 		add_action('mce_buttons' , array(__CLASS__ , 'tinymce_button'));
 
+		add_action('wp_head' , array(__CLASS__ , 'og_tags'));
 		add_shortcode('vj' , array(__CLASS__ , 'shortcode_embed'));
 		add_shortcode('videojuicer' , array(__CLASS__ , 'shortcode_embed'));
 	}
@@ -195,6 +196,12 @@ class Videojuicer {
 	public static function shortcode_embed( $params ) 
 	{
 		return self::get('frontend_class')->shortcode( $params );
+	}
+
+	public static function og_tags() 
+	{
+		global $posts;
+		self::get('frontend_class')->og_metadata($posts);
 	}
 
 	public static function on_activation() 

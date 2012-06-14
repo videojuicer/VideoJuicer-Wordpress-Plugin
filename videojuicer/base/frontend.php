@@ -31,6 +31,11 @@ class videojuicer_frontend
 
 	public function get_embed( $using )
 	{
+
+		if ( array_key_exists("{$using['seed']}_{$using['presentation']}" , self::$embeds) ) {
+			return self::$embeds["{$using['seed']}_{$using['presentation']}"];
+		}
+
 		$endpoint = $this->build_string( Videojuicer::OEMBED_ENDPOINT , array('seed' => $using['seed'] ));
 		$url = $this->build_string(  Videojuicer::URL_SCHEMA , array('seed' => $using['seed'] , 'presentation' => $using['presentation'] ));
 
@@ -40,16 +45,21 @@ class videojuicer_frontend
 						  'maxheight' => $using['height']
 		);	
 		
+		Ion_Log::debug(var_export($request , true));
+
 		$embed = null;
 	
 		try {
 			$embed = new videojuicer_embed( $request , TRUE);
 		}
 		catch( Exception $e ) {
+			Ion_Log::error($e->message);
 			return 'Sorry an Error has occured';
 		}
 
 		self::$embeds["{$using['seed']}_{$using['presentation']}"] = $embed;
+
+		return $embed;
 	}
 
 	public function shortcode( $attr ) 
@@ -93,6 +103,67 @@ class videojuicer_frontend
 		}
 
 		return ( '<div>'.$this->embed->html.$string.'</div>' );
+	}
+
+	public function og_metadata( $posts ) {
+
+		if ( count($posts) > 1 ) return;
+
+		// \[v(ideo)?j(uicer)?(.*)\] 
+
+		if ( preg_match_all( '|(?mi-Us)\[(v(ideo)?j(uicer)?.*)\]|', $posts[0]->post_content, $matchs) == true) {
+
+			$other = array(
+				"og:local" => get_locale(),
+				"og:site_name" => get_site_option("blogname" , "Videojuicer" , true)
+			);
+
+			Ion_Log::debug(print_r($other , true));
+
+			$params = explode(' ', $matchs[1][0]);
+
+			$ordered = array("presentation" , "width" , "height" , "seed");
+			$attr = array();
+			$c =0;
+
+			foreach ( $params as $parameter ) {
+
+	  		if ( preg_match('/(?mi-Us)(videojuicer|vj)/', $parameter) ) continue;
+
+				if ( false !== strpos($parameter , "=") ) {
+					$parts = explode("=", $parameter);
+
+					$attr[$parts[0]] = $parts[1];
+
+				}
+				else {
+					$attr[$ordered[$c]] = $parameter;
+				}
+
+				$c++;
+			}
+
+			$oembed_data = $this->get_embed($attr)->__toArray();
+
+			unset($oembed_data["og:site_name"]);
+
+			$ogdata = array_merge($other , $oembed_data);
+
+			Ion_Log::debug(print_r($ogdata , true));
+
+			foreach ( $ogdata as $key => $value ) {
+
+				if ( preg_match_all( '|(?mi-Us)(og+):(.*)|', $key, $results) && is_string($value) && !is_null($value) ) {
+					
+					Ion_Log::debug($key);
+
+					$value = htmlspecialchars($value);
+
+					echo "<meta property=\"{$key}\" content=\"{$value}\" />".PHP_EOL;
+				}
+			}
+
+		}
 	}
 
 	private function build_string( $template , array $tags ) 

@@ -65,6 +65,8 @@ class videojuicer_admin
 				 		 Videojuicer::ROLE,
 				 		 'videojuicer',
 				 		 array($this , 'options_page'));
+
+		Ion_Log::debug("finished loading options");
 	}
 
 	/**
@@ -79,6 +81,8 @@ class videojuicer_admin
 			$this->save_post();
 			$message = 'Settings updated';
 		}
+
+		Ion_Log::debug("options");
 
 		include $this->view_path.'options.php';			
 	}
