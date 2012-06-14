@@ -3,7 +3,7 @@
 Plugin Name: Videojuicer for Wordpress
 Plugin URI: http://www.videojuicer.com
 Description: This adds some Videojuicer Functionality to Wordpress
-Version: 0.2
+Version: 0.3.0
 Author: VideoJucier
 Author URI: http://www.videojuicer.com
 License: GNU General Public License, version 2 (GPL-2.0)
@@ -19,16 +19,34 @@ You should have received a copy of the GNU General Public License along with thi
 
 Full Terms can be found on the world wide web at http://opensource.org/licenses/GPL-2.0 or in license
 */
+
+/**
+
+Set The Enviroment Type 
+
+**/
+
+if ( defined('ENV') ) define('ENV' , 'development');
+
 /**
 
 Load Required Fields 
 
 **/
 
- foreach ( array('admin' , 'settings' , 'frontend' , 'embed') as $file ) 
+ foreach ( array('log' , 'admin' , 'settings' , 'frontend' , 'embed') as $file ) 
  {
  	require_once dirname(__FILE__).'/base/'.$file.'.php';
  }
+
+ /**
+
+Set the path to write the log to. 
+
+**/
+
+Ion_Log::$logpath = dirname(__FILE__).'/error.log';
+Ion_Log::message("welcome to videojuicer wordpress plugin developer");
 
 /**
 
@@ -148,16 +166,19 @@ class Videojuicer {
 
 	public static function on_admin_init() 
 	{
+		Ion_Log::debug("booting admin");
 		self::get('admin_class')->init();
 	}
 
 	public static function on_admin_menu()
 	{
+		Ion_Log::debug("attaching admin menu");
 		self::get('admin_class')->menu();
 	}
 
 	public static function on_admin_head() 
 	{
+		Ion_Log::debug("generating admin head");
 		self::get('admin_class')->head();
 	}
 
@@ -182,6 +203,7 @@ class Videojuicer {
 			add_option(self::OPTION , array('version' => self::VERSION) , '' , 'no');
 		}
 	}
+
 }
 
 /**

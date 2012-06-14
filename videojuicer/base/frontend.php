@@ -22,9 +22,34 @@ class videojuicer_frontend
 
 	private $embed;
 
+	private static $embeds = array();
+
 	public function __construct()
 	{
 		$this->settings = new videojuicer_settings(Videojuicer::OPTION, array());
+	}
+
+	public function get_embed( $using )
+	{
+		$endpoint = $this->build_string( Videojuicer::OEMBED_ENDPOINT , array('seed' => $using['seed'] ));
+		$url = $this->build_string(  Videojuicer::URL_SCHEMA , array('seed' => $using['seed'] , 'presentation' => $using['presentation'] ));
+
+		$request = array( 'endpoint' => $endpoint,
+						  'url' => $url,	
+						  'maxwidth' => $using['width'],
+						  'maxheight' => $using['height']
+		);	
+		
+		$embed = null;
+	
+		try {
+			$embed = new videojuicer_embed( $request , TRUE);
+		}
+		catch( Exception $e ) {
+			return 'Sorry an Error has occured';
+		}
+
+		self::$embeds["{$using['seed']}_{$using['presentation']}"] = $embed;
 	}
 
 	public function shortcode( $attr ) 
@@ -47,21 +72,9 @@ class videojuicer_frontend
 			$count++;
 		}
 
-		$endpoint = $this->build_string( Videojuicer::OEMBED_ENDPOINT , array('seed' => $final['seed'] ));
-		$url = $this->build_string(  Videojuicer::URL_SCHEMA , array('seed' => $final['seed'] , 'presentation' => $final['presentation'] ));
 
-		$request = array( 'endpoint' => $endpoint,
-						  'url' => $url,	
-						  'maxwidth' => $final['width'],
-						  'maxheight' => $final['height']
-		);	
+		$this->embed = $this->get_embed($final);
 
-		try {
-			$this->embed = new videojuicer_embed( $request , TRUE);
-		}
-		catch( Exception $e ) {
-			return 'Sorry an Error as occured';
-		}
 
 		$string = '';
 

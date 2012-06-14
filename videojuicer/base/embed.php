@@ -98,6 +98,7 @@ class videojuicer_embed
 					 Code 	:	is set to the http response code
 					 Message: 	is the http message
 				*/
+				Ion_Log::error($response['response']['message']. " - " . $response['response']['code']);
 				throw new Exception($response['response']['message'] , $response['response']['code']);
 			}
 
