@@ -13,7 +13,7 @@ Full Terms can be found on the world wide web at http://opensource.org/licenses/
 */
 
 /**
-This handles font end work 
+This handles front end work 
 **/
 
 class videojuicer_frontend
@@ -51,7 +51,6 @@ class videojuicer_frontend
 			$embed = new videojuicer_embed( $request , TRUE);
 		}
 		catch( Exception $e ) {
-			Ion_Log::error($e->message);
 			return 'Sorry an Error has occured';
 		}
 
@@ -143,6 +142,12 @@ class videojuicer_frontend
 				}
 
 				$c++;
+			}
+
+			if ( count($attr) < 1 || !array_key_exists('presentation', $attr)) return;
+
+			if ( !array_key_exists('seed', $attr) || is_null($attr['seed'])) {
+				$attr['seed'] = $this->settings->seed_id;
 			}
 
 			$oembed = $this->get_embed($attr);

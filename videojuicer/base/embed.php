@@ -87,8 +87,7 @@ class videojuicer_embed
 
 		if ( is_wp_error($response) ) {
 			Ion_Log::error(var_export($response , true));
-			throw new Exception(($response->get_error_message() ? $response->get_error_message() : "unknown error") , 
-													($response->get_error_code() ? $response->get_error_code() : 500));
+			throw new Exception("Failed to get data check url" , 500);
 		}
 		else {
 			if ( $response['response']['code'] != 200 ) {

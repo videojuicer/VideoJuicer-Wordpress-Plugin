@@ -3,7 +3,7 @@
 Plugin Name: Videojuicer for Wordpress
 Plugin URI: http://www.videojuicer.com
 Description: This adds some Videojuicer Functionality to Wordpress
-Version: 0.3.0
+Version: 1.3.0
 Author: VideoJucier
 Author URI: http://www.videojuicer.com
 License: GNU General Public License, version 2 (GPL-2.0)
@@ -26,7 +26,7 @@ Set The Enviroment Type
 
 **/
 
-if ( defined('ENV') ) define('ENV' , 'development');
+if ( !defined('ION_LOGENV') ) define('ION_LOGENV' , 'production');
 
 /**
 
@@ -85,7 +85,7 @@ class Videojuicer {
 	Plugin version , used for updates
 
 	**/
-	const VERSION = '0.1.0';
+	const VERSION = '1.3.0';
 
 	/**
 
