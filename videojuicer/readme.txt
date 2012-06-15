@@ -46,7 +46,7 @@ Options
 	Presentation* : The id of the presentation if you do not know this please contact Videojuicer
 	width		  : The width to embed the video at in pixels ( note you do not need the px 
 				    i.e use 800 not 800px)
-	height        : The height at which to embed the video again in pixals
+	height        : The height at which to embed the video again in pixels
 	seed		  : Your Videojuicer seed ID please contact Videojuicer if you are unsure as to what this is
 
 *Required
@@ -63,28 +63,37 @@ Title
 	Show Author 	 : Display the Video's author below the video $
 	Show Description : Display the Video's description below the video $
 
-	Default Embed Dimensions: The default Width and Height to use when embeding video content. This is 
+	Default Embed Dimensions: The default Width and Height to use when embedding video content. This is 
 	Pixels , please note you don't need to including the 'px' as above.
 
 $ Depending on the data been supplied by the Videojuicer Oembed endpoint. 
 
 == Installation ==
 
-Installation instruction may change depending on Videojuicer submitting the plugin to the wordpress plugin directory.
+Installation instruction may change depending on Videojuicer submitting the plugin to the Wordpress plugin directory.
 
 1. Download the plugin from Videojuicer's GitHub at 
-2. copy / upload the videojuicer directory to /wp-content/plugins/ so you end up with /wp-content/plugins/videojuicer
+2. copy / upload the Videojuicer directory to /wp-content/plugins/ so you end up with /wp-content/plugins/videojuicer
 3. Activate the plugin in the Wordpress admin area , normally located at /wp-admin
 4. Setup the defaults in Setting => Videojuicer
 
 == Screenshots ==
 
 1. The Editor Showing the Videojuicer button
-2. The Editor Showing the Videojuicer easy insert dialogue
+2. The Editor Showing the Videojuicer easy insert dialog
 3. The Editor Showing the Shortcodes
 4. The Options Screen.
 
 == Changelog ==
+
+= 1.3.1 =
+* Added Visual Quick start guide
+* Spell checked this readme document. 
+
+= 1.3.0 =
+* Added support for Opengraph Meta tags
+* Added support for Oembed Meta tags
+* Added debugging tool "Ion_Log"
 
 = 1.0 =
 * Intial release.
