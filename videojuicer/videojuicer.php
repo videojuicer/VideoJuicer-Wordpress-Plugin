@@ -207,7 +207,7 @@ class Videojuicer {
 	public static function on_activation() 
 	{
 		if ( !get_option(self::OPTION , FALSE) ) {
-			add_option(self::OPTION , array('version' => self::VERSION) , '' , 'no');
+			add_option(self::OPTION , array('version' => self::VERSION , 'facebook' => true , 'oembed' => true) , '' , 'no');
 		}
 	}
 

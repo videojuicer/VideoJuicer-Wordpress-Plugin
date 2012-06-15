@@ -100,7 +100,35 @@ Full Terms can be found on the world wide web at http://opensource.org/licenses/
 								</fieldset>
 							</td>
 					</tr>
-									
+
+					<tr valign="top">
+						<th scope="row">Facebook</th>
+							<td>
+								<fieldset>
+									<legend class="screen-reader-text">
+										<span>add facebook opengraph data to head</span>
+									</legend>
+
+									<label for="facebook">
+										<input type="checkbox" <?php if ( $this->settings->facebook ) :?>checked="checked"<?php endif; ?> value="1" id="facebook" name="facebook" /> Add the facebook opengraph data. 
+									</label>
+								</fieldset>
+							</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row">Oembed</th>
+							<td>
+								<fieldset>
+									<legend class="screen-reader-text">
+										<span>add oembed data to head</span>
+									</legend>
+
+									<label for="oembed">
+										<input type="checkbox" <?php if ( $this->settings->oembed ) :?>checked="checked"<?php endif; ?> value="1" id="oembed" name="oembed" /> Add the oembed data. 
+									</label>
+								</fieldset>
+							</td>
+					</tr>									
 				</tbody>
 			</table>
 

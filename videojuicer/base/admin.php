@@ -30,7 +30,7 @@ class videojuicer_admin
 	public function __construct() 
 	{
 		$this->view_path = dirname(__FILE__).'/../'.Videojuicer::VIEWS;
-		$this->settings = new videojuicer_settings( Videojuicer::OPTION , array('seed_id' , 'show_title' , 'show_author' , 'show_description' , 'width' , 'height'));
+		$this->settings = new videojuicer_settings( Videojuicer::OPTION , array('seed_id' , 'show_title' , 'show_author' , 'show_description' , 'width' , 'height' , 'facebook' , 'oembed'));
 	}
 	/**
 
@@ -89,7 +89,7 @@ class videojuicer_admin
 
 	private function save_post() {
 
-		$this->settings->clear(array('show_title' , 'show_author' , 'show_description'));
+		$this->settings->clear(array('show_title' , 'show_author' , 'show_description' , 'facebook' , 'oembed'));
 
 		foreach ( $_POST as $setting => $value ) {
 				$this->settings->__set($setting , trim($value) );

@@ -45,8 +45,6 @@ class videojuicer_frontend
 						  'maxheight' => $using['height']
 		);	
 		
-		Ion_Log::debug(var_export($request , true));
-
 		$embed = null;
 	
 		try {
@@ -107,18 +105,22 @@ class videojuicer_frontend
 
 	public function og_metadata( $posts ) {
 
+		Ion_Log::debug("facebook is ".var_export($this->settings->facebook , true));
+		Ion_Log::debug("oembed is ".var_export($this->settings->oembed , true));
+
+		if ( !$this->settings->facebook && !$this->settings->oembed ) return;
+
+		Ion_Log::debug("Determining required header information");
+
 		if ( count($posts) > 1 ) return;
 
 		// \[v(ideo)?j(uicer)?(.*)\] 
-
 		if ( preg_match_all( '|(?mi-Us)\[(v(ideo)?j(uicer)?.*)\]|', $posts[0]->post_content, $matchs) == true) {
 
 			$other = array(
-				"og:local" => get_locale(),
+				"og:locale" => get_locale(),
 				"og:site_name" => get_site_option("blogname" , "Videojuicer" , true)
 			);
-
-			Ion_Log::debug(print_r($other , true));
 
 			$params = explode(' ', $matchs[1][0]);
 
@@ -143,23 +145,42 @@ class videojuicer_frontend
 				$c++;
 			}
 
-			$oembed_data = $this->get_embed($attr)->__toArray();
+			$oembed = $this->get_embed($attr);
 
+			$oembed_url_json = htmlspecialchars($oembed->build_url());
+			$oembed_url_xml = str_replace("json", "xml", $oembed_url_json);
+
+			$oembed_data = $oembed->__toArray();
 			unset($oembed_data["og:site_name"]);
-
 			$ogdata = array_merge($other , $oembed_data);
 
-			Ion_Log::debug(print_r($ogdata , true));
+			// Oembed
+			if ( $this->settings->oembed) {
+				Ion_Log::debug("insert oembed data");
+				// Oembed data
+				echo "<link type=\"application/json+oembed\" href=\"{$oembed_url_json}\" title=\"{$ogdata["title"]} (oEmbed profile, JSON format)\" rel=\"alternate\" />".PHP_EOL;
+				echo "<link type=\"application/xml+oembed\" href=\"{$oembed_url_xml}\" title=\"{$ogdata["title"]} (oEmbed profile, XML format)\" rel=\"alternate\" />".PHP_EOL;
+			}
 
-			foreach ( $ogdata as $key => $value ) {
+			// Facebook
+			if ( $this->settings->facebook ) {
+				Ion_Log::debug("insert facebook data");
+				// OpenGraph Meta data 
+				foreach ( $ogdata as $key => $value ) {
+					if ( preg_match_all( '|(?mi-Us)(og+):(.*)|', $key, $results) && is_string($value) && !is_null($value) ) {
+						$value = htmlspecialchars($value);
+						echo "<meta property=\"{$key}\" content=\"{$value}\" />".PHP_EOL;
+					}
+				}
 
-				if ( preg_match_all( '|(?mi-Us)(og+):(.*)|', $key, $results) && is_string($value) && !is_null($value) ) {
-					
-					Ion_Log::debug($key);
-
-					$value = htmlspecialchars($value);
-
-					echo "<meta property=\"{$key}\" content=\"{$value}\" />".PHP_EOL;
+				// OpenGraph Video data
+				foreach ( $ogdata["og:videos"] as $video ) {
+					foreach ( $video as $video_data ) {
+						 foreach ( $video_data as $key => $value) {
+						 	$value = htmlspecialchars($value);		
+							echo "<meta property=\"{$key}\" content=\"{$value}\" />".PHP_EOL;
+						}
+					}
 				}
 			}
 
