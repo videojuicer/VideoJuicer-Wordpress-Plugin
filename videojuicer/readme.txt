@@ -1,8 +1,8 @@
 === Videojuicer For Wordpress ===
 Contributors: vj_martin
 Tags: video , media , videojuicer , video jucier , helper
-Requires at least: 3.0.0
-Tested up to: 3.3.1
+Requires at least: 3.0
+Tested up to: 3.4
 Stable tag: trunk
 
 A helper plugin to embed Video content hosted by Videojuicer 
@@ -15,6 +15,9 @@ wordpress page or post.
 
 You can configure the plug-in to show the video's meta data in the post ( where available ) , as 
 well as default dimensions to display the video at and a default account to use. 
+
+The plugin also adds in the required meta data tags to support both open graph integration with facebook
+and Oembed integration. 
 
 Usage
 -----
@@ -30,15 +33,21 @@ You can setup other options in the shortcode to, ether by naming them of placing
 
 [videojuicer {presentation id} {width} {height} {seed id}]
 
+e.g [videojuicer 16 640 480]
+
 or 
 
-[videojuicer presentation="{id}" width="{width}" height="{height}" seed="{seed}"]
+[videojuicer presentation={id} width={width} height={height} seed={seed}]
+
+e.g [videojuicer presentation=16 width=640 height=480 seed=demo] 
 
 Please note: for the first example to work correctly you need to place the parameters in that order. 
 
 **Alternative**
 
 For those of you who like to keep things short you can also use the alias [vj] 
+
+There is also a PDF visual start guide inside the folder. 
 
 Options
 -------

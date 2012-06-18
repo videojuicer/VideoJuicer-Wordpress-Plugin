@@ -30,7 +30,16 @@ class videojuicer_admin
 	public function __construct() 
 	{
 		$this->view_path = dirname(__FILE__).'/../'.Videojuicer::VIEWS;
-		$this->settings = new videojuicer_settings( Videojuicer::OPTION , array('seed_id' , 'show_title' , 'show_author' , 'show_description' , 'width' , 'height' , 'facebook' , 'oembed'));
+		$this->settings = new videojuicer_settings( Videojuicer::OPTION , array(
+			'seed_id', 
+			'show_title', 
+			'show_author', 
+			'show_description', 
+			'width',
+			'height', 
+			'facebook', 
+			'oembed', 
+			'fb_app'));
 	}
 	/**
 

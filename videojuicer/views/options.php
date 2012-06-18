@@ -115,6 +115,18 @@ Full Terms can be found on the world wide web at http://opensource.org/licenses/
 								</fieldset>
 							</td>
 					</tr>
+
+					<tr valign="top">
+						<th scope="row">Facebook Additional</th>
+							<td>
+								<div class="form-field">
+									<label for='fb_app'>Facebook App Id</label>
+									<input type='text' id='fb_app' name='fb_app' value='<?php echo $this->settings->fb_app ? $this->settings->fb_app : ''; ?>' />
+									<p> Your Facebook application ID 328227980312505 </p>
+								</div>	
+							</td>
+					</tr>
+
 					<tr valign="top">
 						<th scope="row">Oembed</th>
 							<td>
@@ -128,7 +140,10 @@ Full Terms can be found on the world wide web at http://opensource.org/licenses/
 									</label>
 								</fieldset>
 							</td>
-					</tr>									
+					</tr>	
+
+
+							
 				</tbody>
 			</table>
 

@@ -118,7 +118,8 @@ class videojuicer_frontend
 
 			$other = array(
 				"og:locale" => get_locale(),
-				"og:site_name" => get_site_option("blogname" , "Videojuicer" , true)
+				"og:site_name" => get_site_option("blogname" , "Videojuicer" , true),
+				"fb:app_id" => ($this->settings->fb_app ? $this->settings->fb_app : null)
 			);
 
 			$params = explode(' ', $matchs[1][0]);
@@ -172,7 +173,12 @@ class videojuicer_frontend
 				Ion_Log::debug("insert facebook data");
 				// OpenGraph Meta data 
 				foreach ( $ogdata as $key => $value ) {
-					if ( preg_match_all( '|(?mi-Us)(og+):(.*)|', $key, $results) && is_string($value) && !is_null($value) ) {
+					if ( preg_match( '/(?mi-Us)(og|fb+):(.*)/', $key) // if an Opengraph or Facebook Namespace og: or fb:
+							 && is_string($value) // The value is a string
+							 && !is_null($value) // The value is no null
+							 && $value != "" // The value is not blank
+							 && !preg_match('|(?m-Usi)^No\s*.+|', $value) //the value is not "No something"
+							) {
 						$value = htmlspecialchars($value);
 						echo "<meta property=\"{$key}\" content=\"{$value}\" />".PHP_EOL;
 					}
