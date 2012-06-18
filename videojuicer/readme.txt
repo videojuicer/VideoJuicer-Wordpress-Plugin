@@ -87,6 +87,20 @@ Installation instruction may change depending on Videojuicer submitting the plug
 3. Activate the plugin in the Wordpress admin area , normally located at /wp-admin
 4. Setup the defaults in Setting => Videojuicer
 
+== Frequently Asked Questions ==
+
+How do I report a bug / request a new feature?
+*At our github issue tracker https://github.com/videojuicer/VideoJuicer-Wordpress-Plugin/issues*
+
+Why should I use this plugin?
+*The plugin allows you to easily insert the latest Videojuicer embed codes and can take care of facebook opengraph tags , allowing you to get on with what you do, producing content. Safe in the knowledge that you will automatically get the latest features and updates for your seed.*
+
+What is Videojuicer?
+*Videojuicer is all about getting more from video and gaining the attention of audiences in a crowded social space. Our strategy is to look at the right combination of video content, the context in which it’s viewed and the kinds of calls to action to which audiences might respond. for more visit us at http://www.videojuicer.com/*
+
+How do I get a Videojuicer account?
+*Please visit our website at http://www.videojuicer.com/ to see what we do. Alternatively you can contact a member of the Videojuicer team at info@videojuicer.com
+
 == Screenshots ==
 
 1. The Editor Showing the Videojuicer button
