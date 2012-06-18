@@ -4,23 +4,24 @@ Tags: video , media , videojuicer , video jucier , helper
 Requires at least: 3.0
 Tested up to: 3.4
 Stable tag: trunk
+License: GPLv2
 
 A helper plugin to embed Video content hosted by Videojuicer 
 
 == Description ==
 
-
-Allowing you to quickly embed video content from [Videojuicer]: http://www.videojuicer.com into any 
+Allowing you to quickly embed video content from [Videojuicer](http://www.videojuicer.com) into any 
 wordpress page or post. 
 
 You can configure the plug-in to show the video's meta data in the post ( where available ) , as 
-well as default dimensions to display the video at and a default account to use. 
+well as default dimensions to display the video at and a default seed to use. 
 
 The plugin also adds in the required meta data tags to support both open graph integration with facebook
 and Oembed integration. 
 
-Usage
------
+## Usage
+
+There is also a PDF visual start guide inside the folder. 
 
 Inserting the content is a simple as inserting [videojuicer {presentation id}] in to the post / page body 
 for example [videojuicer 16]. 
@@ -47,33 +48,33 @@ Please note: for the first example to work correctly you need to place the param
 
 For those of you who like to keep things short you can also use the alias [vj] 
 
-There is also a PDF visual start guide inside the folder. 
+## Options
 
-Options
--------
+* Presentation (**required**) : The id of the presentation if you do not know this please contact Videojuicer
+* width		  : The width to embed the video at in pixels ( note you do not need the px i.e use 800 not 800px)
+* height     : The height at which to embed the video again in pixels
+* seed		  : Your Videojuicer seed ID please contact Videojuicer if you are unsure as to what this is
 
-	Presentation* : The id of the presentation if you do not know this please contact Videojuicer
-	width		  : The width to embed the video at in pixels ( note you do not need the px 
-				    i.e use 800 not 800px)
-	height        : The height at which to embed the video again in pixels
-	seed		  : Your Videojuicer seed ID please contact Videojuicer if you are unsure as to what this is
-
-*Required
-
-Settings
---------
+## Settings
 
 Default configuration settings can be set up by visiting Settings => Videojuicer in the Wordpress admin area.
-Normally located at http://www.{your domain}/wp-admin. These settings are used when you don't specify anything different. This allows you to insert video without setting up the seed id or dimensions. It also allows you to setup whether or not you want the meta data about the video displayed in the post, such as 
+Normally located at http://www.yourdomain.com/wp-admin. These settings are used when you don't specify anything different. This allows you to insert video without setting up the seed id or dimensions. It also allows you to setup whether or not you want the meta data about the video displayed in the post, such as 
 Title
 
-	Seed Id     	 : A default Seed ID to use 
-	Show Title  	 : Displays the Video's title below the video $
-	Show Author 	 : Display the Video's author below the video $
-	Show Description : Display the Video's description below the video $
+* Seed Id     	 : A default Seed ID to use 
+* Show Title  	 : Displays the Video's title below the video $
+* Show Author 	 : Display the Video's author below the video $
+* Show Description : Display the Video's description below the video $
 
-	Default Embed Dimensions: The default Width and Height to use when embedding video content. This is 
-	Pixels , please note you don't need to including the 'px' as above.
+* Default Embed Dimensions: The default Width and Height to use when embedding video content. This is in Pixels. *Please note you don't need to including the 'px' as above.*
+
+* Facebook : Whether you want to include the facebook Opengraph meta data to allow better integration with Facebook 
+*Please note this has not been tested with other facebook plugins and may cause problems*
+
+* Facebook additional 
+  * Facebook App Id : This allows you to add your facebook app ID
+
+* Oembed : Whether you want to include the Oembed link tags.
 
 $ Depending on the data been supplied by the Videojuicer Oembed endpoint. 
 
@@ -94,6 +95,10 @@ Installation instruction may change depending on Videojuicer submitting the plug
 4. The Options Screen.
 
 == Changelog ==
+
+= 1.3.2 =
+* Added fb:app_id support 
+* Tested up to 3.4 
 
 = 1.3.1 =
 * Added Visual Quick start guide
