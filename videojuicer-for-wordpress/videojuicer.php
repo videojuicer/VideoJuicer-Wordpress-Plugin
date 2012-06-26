@@ -30,6 +30,14 @@ if ( !defined('ION_LOGENV') ) define('ION_LOGENV' , 'production');
 
 /**
 
+Plugin name
+
+**/
+
+if ( !defined('VIDEOJUICER_PLUGIN') ) define('VIDEOJUICER_PLUGIN' , 'videojuicer-for-wordpress');
+
+/**
+
 Load Required Fields 
 
 **/
@@ -53,7 +61,7 @@ Ion_Log::message("welcome to videojuicer wordpress plugin developer");
 This gets called when the plugin gets activated , according to the wordpress docs , it should be outside any class , and can not be registered by the init action. 
 
 **/
-register_activation_hook( WP_PLUGIN_DIR.'/videojuicer/videojuicer.php' , array('Videojuicer' , 'on_activation'));
+register_activation_hook( WP_PLUGIN_DIR.'/'.VIDEOJUICER_PLUGIN.'/videojuicer.php' , array('Videojuicer' , 'on_activation'));
 
 /**
 	Base Class , acts as a Namespace wrapper, to stop name conflicts with other plugins the user may have installed. All methods in this class should be static , this is to allow interface with wordpress. 

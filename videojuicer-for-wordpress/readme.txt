@@ -80,9 +80,11 @@ $ Depending on the data been supplied by the Videojuicer Oembed endpoint.
 
 == Installation ==
 
-Installation instruction may change depending on Videojuicer submitting the plugin to the Wordpress plugin directory.
+The easiest way to install the plugin is from the plugin directory inside wordpress.
 
-1. Download the plugin from Videojuicer's GitHub at 
+Alternatively you can perform a manual download and install by
+
+1. Downloading the plugin from Videojuicer's GitHub at https://github.com/videojuicer/VideoJuicer-Wordpress-Plugin/downloads
 2. copy / upload the Videojuicer directory to /wp-content/plugins/ so you end up with /wp-content/plugins/videojuicer
 3. Activate the plugin in the Wordpress admin area , normally located at /wp-admin
 4. Setup the defaults in Setting => Videojuicer
@@ -109,6 +111,11 @@ How do I get a Videojuicer account?
 4. The Options Screen.
 
 == Changelog ==
+
+= 1.3.3 =
+* updated documentation
+* submitted to wordpress directory
+* added in some bug fixes due to the name change
 
 = 1.3.2 =
 * Added fb:app_id support 
