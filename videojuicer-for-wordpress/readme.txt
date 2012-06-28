@@ -112,6 +112,9 @@ How do I get a Videojuicer account?
 
 == Changelog ==
 
+= 1.3.4 =
+* fixed an issue when the PHP version < 5.3
+
 = 1.3.3 =
 * updated documentation
 * submitted to wordpress directory

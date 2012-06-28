@@ -30,5 +30,22 @@ Full Terms can be found on the world wide web at http://opensource.org/licenses/
         public static function  __callStatic($name , $args) {
           self::log($args[0] , $name);
         } 
+
+        public static function __call($name , $args) {
+          self::log($args[0] , $name);
+        }
+
+        public static function message($message) {
+          self::log($message , __FUNCTION__);
+        }
+
+        public static function debug($message) {
+          self::log($message , __FUNCTION__);
+        }
+
+        public static function error($message) {
+          self::log($message , __FUNCTION__);
+        }
+
     }
   }
