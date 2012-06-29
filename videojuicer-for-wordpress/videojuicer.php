@@ -3,7 +3,7 @@
 Plugin Name: Videojuicer for Wordpress
 Plugin URI: http://www.videojuicer.com
 Description: This adds some Videojuicer Functionality to Wordpress
-Version: 1.3.0
+Version: 1.3.4
 Author: VideoJucier
 Author URI: http://www.videojuicer.com
 License: GNU General Public License, version 2 (GPL-2.0)

@@ -80,19 +80,38 @@ $ Depending on the data been supplied by the Videojuicer Oembed endpoint.
 
 == Installation ==
 
-The easiest way to install the plugin is from the plugin directory inside wordpress.
+The easiest way to install the plugin is from the plugin directory inside wordpress. 
 
-Alternatively you can perform a manual download and install by
+1. In the admin area from the side menu select plugins, and then add new
+2. Search for "videojuicer for wordpress" 
+3. click install and follow the on screen instructions.
+
+Alternatively you can perform a manual download and install by 
+
+1. Downloading the latest release of the plugin from http://wordpress.org/extend/plugins/videojuicer-for-wordpress/
+
+or if you want the "bleeding edge" version **Warning** this version maybe unstable.
 
 1. Downloading the plugin from Videojuicer's GitHub at https://github.com/videojuicer/VideoJuicer-Wordpress-Plugin/downloads
-2. copy / upload the Videojuicer directory to /wp-content/plugins/ so you end up with /wp-content/plugins/videojuicer
+
+Then
+
+2. copy or upload the "videojuicer-for-wordpress" directory to /wp-content/plugins/ so you end up with /wp-content/plugins/videojuicer-for-wordpress
 3. Activate the plugin in the Wordpress admin area , normally located at /wp-admin
 4. Setup the defaults in Setting => Videojuicer
 
 == Frequently Asked Questions ==
 
+I get the message "Can't find plugin's settings , please try deactivating and reactivating plugin or fully re-installing the plugin. If the problem continues please contact plugin developer" what do I do? *Make sure that the directory the plugin is installed is named correctly videojuicer-for-wordpress. If the directory has the correct name then open a support request.*
+
+Does the plugin work on PHP 4? *No at this time it doesn't work on version 4, the minimum version is the same as Wordpress 3.4 that is 5.2.4*
+
+I am using the bleeding edge version do you support it? *I am afraid not, the supported version will be the version in the wordpress directory.*
+
+Can I use the plugin on Wordpress.com? *It appears at this time that wordpress.com does not support custom plugins, you will need to download and install the wordpress software.*
+
 How do I report a bug / request a new feature?
-*At our github issue tracker https://github.com/videojuicer/VideoJuicer-Wordpress-Plugin/issues*
+*At our github issue tracker https://github.com/videojuicer/VideoJuicer-Wordpress-Plugin/issues, please include the wordpress version and php version*
 
 Why should I use this plugin?
 *The plugin allows you to easily insert the latest Videojuicer embed codes and can take care of facebook opengraph tags , allowing you to get on with what you do, producing content. Safe in the knowledge that you will automatically get the latest features and updates for your seed.*
