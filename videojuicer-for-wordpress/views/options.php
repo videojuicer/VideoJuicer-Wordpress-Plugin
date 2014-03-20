@@ -22,12 +22,6 @@ Full Terms can be found on the world wide web at http://opensource.org/licenses/
 	<?php endif; ?>
 	<form action="" method="POST">
 		<div class="form-wrap">
-			<h3>Account Details</h3>
-			<div class="form-field">
-				<label for='seed_id'>Seed ID</label>
-				<input type='text' id='seed_id' name='seed_id' value='<?php echo $this->settings->seed_id ? $this->settings->seed_id : ''; ?>' />
-				<p> Your Seed Id </p>
-			</div>
 			<h3>Settings</h3>
 			<table class="form-table">
 				<tbody>
