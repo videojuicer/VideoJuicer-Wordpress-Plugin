@@ -77,23 +77,22 @@ class Videojuicer {
 
 	**/
 
-	const OEMBED_ENDPOINT = 'http://{seed}.api.videojuicer.com/oembed';
+	const OEMBED_ENDPOINT = 'https://juic.io/oembed';
 
 	/**
 
 	The Videojuicer URL Schema for embeding
-	The protocol is intentionally left of so the embed uses ssl if needed.
 
 	**/
 
-	const URL_SCHEMA = '{seed}.videojuicer.com/presentations/{presentation}.html';
+	const URL_SCHEMA = 'https://juic.io/{presentation}';
 
 	/**
 
 	Plugin version , used for updates
 
 	**/
-	const VERSION = '1.3.0';
+	const VERSION = '1.4.0';
 
 	/**
 
